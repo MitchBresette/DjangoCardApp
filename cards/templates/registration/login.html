@@ -1,0 +1,15 @@
+{% extends "cards/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<h2>Login</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
+
+{% endblock %}

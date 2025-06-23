@@ -1,0 +1,16 @@
+{% extends "cards/base.html" %}
+
+{% block title %}Edit Card{% endblock %}
+
+{% block content %}
+<h2>Edit Card: "{{card.name}}"</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-success me-2">Save Changes</button>
+
+    <a href="{% url 'card_list'  %}" class="btn btn-secondary btn-sm">Back To Card List</a>
+</form>
+
+{% endblock %}

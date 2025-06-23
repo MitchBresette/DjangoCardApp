@@ -1,0 +1,14 @@
+{% extends "cards/base.html" %}
+
+{% block title %}Delete Card{% endblock %}
+
+{% block content %}
+<h2>Delete Card</h2>
+<p>Are you sure you want to <strong>{{card.name}}</strong>?</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a ref="{% url 'card_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
